@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+// TAILWIND
+@import 'angular-material';
+@import 'tailwind';
+
+html, body { height: 100%; }
+body { font-family: Comfortaa; }
+
+.dark {
+  body {
+    background-color: gray;
+  }
+}
