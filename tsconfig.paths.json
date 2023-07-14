@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@movify/core": ["src/app/core/index.ts"],
+      "@movify/color-schema": ["src/app/core/modules/color-schema/index.ts"],
+      "@movify/local-storage": ["src/app/core/modules/local-storage/index.ts"],
+    }
   }
 }
