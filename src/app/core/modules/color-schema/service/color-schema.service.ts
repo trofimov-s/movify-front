@@ -10,7 +10,7 @@ export class ColorSchemaService {
   private htmlElClassList: DOMTokenList = this.document.documentElement.classList;
 
   private get preferredColorScheme(): ColorSchemaEnum {
-    const scheme = this.localStorageHandler.getData(LocalStorageKeys.COLOR_SCHEMA) as ColorSchemaEnum;
+    const scheme = this.localStorageHandler.getData<ColorSchemaEnum>(LocalStorageKeys.COLOR_SCHEMA);
 
     if (scheme) {
       return scheme;

@@ -3,8 +3,10 @@
     "baseUrl": ".",
     "paths": {
       "@movify/core": ["src/app/core/index.ts"],
+      "@movify/token": ["src/app/core/injection-token/index.ts"],
       "@movify/color-schema": ["src/app/core/modules/color-schema/index.ts"],
       "@movify/local-storage": ["src/app/core/modules/local-storage/index.ts"],
+      "@movify/translate": ["src/app/core/modules/translate-config/index.ts"],
     }
   }
 }

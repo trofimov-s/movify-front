@@ -8,7 +8,7 @@ import { CoreModule } from '@movify/core';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, CoreModule],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, CoreModule.forRoot()],
   providers: [],
   bootstrap: [AppComponent],
 })
