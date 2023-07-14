@@ -1,4 +1,3 @@
-// TAILWIND
 @import 'angular-material';
 @import 'tailwind';
 
@@ -7,6 +6,6 @@ body { font-family: Comfortaa; }
 
 .dark {
   body {
-    background-color: gray;
+    background-color: gray; // TODO: Update temporary color
   }
 }

@@ -6,8 +6,8 @@ export class LocalStorageHandlerService {
     localStorage.setItem(key, value);
   }
 
-  getData(key: string): string | null {
-    return localStorage.getItem(key);
+  getData<T = string>(key: string): T | null {
+    return localStorage.getItem(key) as T;
   }
 
   removeData(key: string): void {
