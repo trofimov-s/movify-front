@@ -1,5 +1,10 @@
 name: CI / CD for Movify
 on:
+  workflow_call:
+    inputs:
+      branch:
+        required: true
+        type: string
   pull_request:
     branches: [ "main" ]
 
