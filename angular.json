@@ -35,7 +35,9 @@
             "stylePreprocessorOptions": {
               "includePaths": [
                 "src/styles",
-                "src/styles/libs"
+                "src/styles/libs",
+                "src/styles/components",
+                "src/styles/utils"
               ]
             },
             "scripts": []

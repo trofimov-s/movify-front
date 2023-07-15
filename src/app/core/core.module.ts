@@ -13,7 +13,7 @@ export class CoreModule {
   static forRoot(): ModuleWithProviders<CoreModule> {
     return {
       ngModule: CoreModule,
-      providers: [...TranslateConfigModule.forRoot().providers],
+      providers: [...TranslateConfigModule.forRoot().providers, ...ColorSchemaModule.forRoot().providers],
     };
   }
 }
