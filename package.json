@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "npx eslint 'src/**/*.{js,ts,html}' --quiet --fix",
     "format": "npx prettier 'src/**/*.{js,ts,html,css,scss}' --write",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "deploy": "ng build && surge --project dist/movify_front --domain movify.surge.sh"
   },
   "private": true,
   "dependencies": {
