@@ -9,7 +9,9 @@
       "@movify/translate": ["src/app/core/modules/translate-config/index.ts"],
       "@movify/shared/icon": ["src/app/shared/icon/index.ts"],
       "@movify/shared/button": ["src/app/shared/button/index.ts"],
-      "@movify/shared/loaders": ["src/app/shared/loaders/index.ts"]
+      "@movify/shared/loaders": ["src/app/shared/loaders/index.ts"],
+      "@movify/layout": ["src/app/layout/index.ts"],
+      "@movify/pages/home": ["src/app/pages/home/index.ts"]
     }
   }
 }
