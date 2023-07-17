@@ -7,7 +7,9 @@
       "@movify/color-schema": ["src/app/core/modules/color-schema/index.ts"],
       "@movify/local-storage": ["src/app/core/modules/local-storage/index.ts"],
       "@movify/translate": ["src/app/core/modules/translate-config/index.ts"],
-      "@movify/shared/icon": ["src/app/shared/icon/index.ts"]
+      "@movify/shared/icon": ["src/app/shared/icon/index.ts"],
+      "@movify/shared/button": ["src/app/shared/button/index.ts"],
+      "@movify/shared/loaders": ["src/app/shared/loaders/index.ts"]
     }
   }
 }

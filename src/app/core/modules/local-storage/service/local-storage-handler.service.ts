@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 
+import { LocalStorageKeys } from '../enum';
+
 @Injectable()
 export class LocalStorageHandlerService {
-  setData(key: string, value: string): void {
+  setData(key: LocalStorageKeys, value: string): void {
     localStorage.setItem(key, value);
   }
 
-  getData<T = string>(key: string): T | null {
+  getData<T = string>(key: LocalStorageKeys): T | null {
     return localStorage.getItem(key) as T;
   }
 
-  removeData(key: string): void {
+  removeData(key: LocalStorageKeys): void {
     localStorage.removeItem(key);
   }
 

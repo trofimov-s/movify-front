@@ -1,0 +1,33 @@
+@import 'animations';
+
+:host {
+  @apply inline-flex h-full w-full;
+
+  .wrapper {
+    @apply inline-flex h-full w-full relative;
+  }
+
+  .circle {
+    @apply inline-block rounded-full absolute top-1/2 left-1/2 border border-solid;
+
+    &-1 {
+      @apply h-7 w-7;
+      animation: circle-loader 1.5s linear infinite;
+    }
+
+    &-2 {
+      @apply h-6 w-6;
+      animation: circle-loader 1.3s linear infinite;
+    }
+
+    &-3 {
+      @apply h-4 w-4;
+      animation: circle-loader 1s linear infinite;
+    }
+
+    &-4 {
+      @apply h-1.5 w-1.5;
+      animation: circle-loader 3s linear infinite;
+    }
+  }
+}
