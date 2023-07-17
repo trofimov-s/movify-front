@@ -3,9 +3,7 @@ import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { BehaviorSubject, Observable, take } from 'rxjs';
 
 import { AppLanguage } from '../enum';
-import { LocalStorageHandlerService } from '@movify/local-storage';
-
-const LANG = 'lang';
+import { LocalStorageHandlerService, LocalStorageKeys } from '@movify/local-storage';
 
 @Injectable()
 export class TranslateHandlerService {
@@ -26,7 +24,7 @@ export class TranslateHandlerService {
   ) {}
 
   init(): void {
-    const preferredLang = this.localStorageHandler.getData<AppLanguage>(LANG);
+    const preferredLang = this.localStorageHandler.getData<AppLanguage>(LocalStorageKeys.LANG);
 
     if (preferredLang) {
       this.translateService.use(preferredLang);
@@ -51,6 +49,6 @@ export class TranslateHandlerService {
 
   private updateStorage(lang: AppLanguage): void {
     this._currentLang$.next(lang);
-    this.localStorageHandler.setData(LANG, lang);
+    this.localStorageHandler.setData(LocalStorageKeys.LANG, lang);
   }
 }

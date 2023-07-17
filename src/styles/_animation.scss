@@ -1,0 +1,12 @@
+/* Circle loader */
+@keyframes circle-loader {
+  0% {
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(0.3);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+}

@@ -1,0 +1,15 @@
+<button
+  [class]="'btn ' + size"
+  [type]="type"
+  [disabled]="disabled || isLoading"
+  [class.btn--secondary]="type === 'secondary'"
+  [class.disabled]="disabled || isLoading"
+  [ngClass]="extendedClass"
+  (click)="onclick.emit($event)"
+>
+  <ng-content *ngIf="!isLoading; else loader"></ng-content>
+</button>
+
+<ng-template #loader>
+  <app-circle-loader [appearance]="type === 'primary' ? 'white' : 'blue'"></app-circle-loader>
+</ng-template>
