@@ -4,16 +4,21 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 import { ColorSchemaModule } from '@movify/color-schema';
 import { LocalStorageModule } from '@movify/local-storage';
 import { TranslateConfigModule } from '@movify/translate';
+import { IconModule } from '@movify/shared/icon';
 
 @NgModule({
-  imports: [CommonModule, ColorSchemaModule, LocalStorageModule, TranslateConfigModule],
+  imports: [CommonModule, ColorSchemaModule, LocalStorageModule, TranslateConfigModule, IconModule],
   exports: [TranslateConfigModule],
 })
 export class CoreModule {
   static forRoot(): ModuleWithProviders<CoreModule> {
     return {
       ngModule: CoreModule,
-      providers: [...TranslateConfigModule.forRoot().providers, ...ColorSchemaModule.forRoot().providers],
+      providers: [
+        ...TranslateConfigModule.forRoot().providers,
+        ...ColorSchemaModule.forRoot().providers,
+        ...IconModule.forRoot().providers,
+      ],
     };
   }
 }

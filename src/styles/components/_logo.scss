@@ -1,0 +1,16 @@
+.logo {
+  @apply inline-block relative;
+  background: linear-gradient(#06d1de 40%, #df07d6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  &::after {
+    content: '🇺🇦';
+    position: absolute;
+    -webkit-background-clip: none;
+    -webkit-text-fill-color: initial;
+    top: -8px;
+    right: -30px;
+    font-size: 28px;
+  }
+}

@@ -1,0 +1,16 @@
+:host {
+  @apply flex flex-col;
+
+  .dropdown-item-wrapper {
+    @apply py-2 px-3 rounded-xl cursor-pointer;
+    transition: background-color 150ms linear;
+  }
+
+  &:hover .dropdown-item-wrapper {
+    @apply bg-gray-90 dark:bg-gray-600;
+  }
+
+  .dropdown-item-separator {
+    @apply w-full h-px mt-1.5 bg-gray-200 dark:bg-gray-400;
+  }
+}

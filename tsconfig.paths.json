@@ -3,6 +3,8 @@
     "baseUrl": ".",
     "paths": {
       "@movify/core": ["src/app/core/index.ts"],
+      "@movify/core/functions": ["src/app/core/functions/index.ts"],
+      "@movify/core/animation": ["src/app/core/animation/index.ts"],
       "@movify/token": ["src/app/core/injection-token/index.ts"],
       "@movify/color-schema": ["src/app/core/modules/color-schema/index.ts"],
       "@movify/local-storage": ["src/app/core/modules/local-storage/index.ts"],
@@ -10,8 +12,11 @@
       "@movify/shared/icon": ["src/app/shared/icon/index.ts"],
       "@movify/shared/button": ["src/app/shared/button/index.ts"],
       "@movify/shared/loaders": ["src/app/shared/loaders/index.ts"],
+      "@movify/shared/logo": ["src/app/shared/logo/index.ts"],
+      "@movify/shared/dropdown": ["src/app/shared/dropdown/index.ts"],
       "@movify/layout": ["src/app/layout/index.ts"],
-      "@movify/pages/home": ["src/app/pages/home/index.ts"]
+      "@movify/pages/home": ["src/app/pages/home/index.ts"],
+      "@movify/auth": ["src/app/layout/modules/auth/index.ts"],
     }
   }
 }

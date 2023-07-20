@@ -1,0 +1,4 @@
+<app-icon [class.light_mode]="(isDarkMode$ | async) === false" icon="light_mode"></app-icon>
+<mat-slide-toggle [checked]="isDarkMode$ | async" (change)="changeColorSchema()">
+</mat-slide-toggle>
+<app-icon [class.dark_mode]="isDarkMode$ | async" icon="dark_mode"></app-icon>

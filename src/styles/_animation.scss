@@ -10,3 +10,14 @@
     transform: translate(-50%, -50%) scale(0.9);
   }
 }
+
+/* Appearance */
+@keyframes appearance {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

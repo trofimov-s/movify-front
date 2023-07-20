@@ -1,0 +1,22 @@
+<button
+  cdkOverlayOrigin
+  #trigger="cdkOverlayOrigin"
+  [class.open]="isOpen"
+  class="dropdown-btn inline-flex"
+  (click)="toggle(); $event.stopPropagation()"
+>
+  <ng-content></ng-content>
+</button>
+
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="trigger"
+  [cdkConnectedOverlayOpen]="isOpen"
+  [cdkConnectedOverlayPanelClass]="'dropdown-overlay'"
+  [cdkConnectedOverlayPositions]="positionPairs"
+  (overlayOutsideClick)="close()"
+>
+  <ng-container *ngFor="let menu of menuCollection">
+    <app-dropdown-item [menu]="menu" (elClick)="close()"></app-dropdown-item>
+  </ng-container>
+</ng-template>

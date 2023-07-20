@@ -1,0 +1,11 @@
+:host {
+  @apply flex items-center h-16 px-5 justify-between shadow;
+
+  .logo-wrapper {
+    @apply flex items-center gap-x-2;
+
+    app-logo {
+      @apply w-12;
+    }
+  }
+}

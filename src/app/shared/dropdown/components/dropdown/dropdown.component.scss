@@ -1,0 +1,15 @@
+:host {
+  @apply flex items-center;
+
+  .open::ng-deep {
+    span {
+      @apply text-turquise-400;
+    }
+
+    path,
+    rect,
+    g {
+      @apply fill-turquise-400;
+    }
+  }
+}

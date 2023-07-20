@@ -3,11 +3,16 @@ import { DOCUMENT } from '@angular/common';
 
 import { ColorSchemaEnum } from '../enum';
 import { LocalStorageHandlerService, LocalStorageKeys } from '@movify/local-storage';
+import { BehaviorSubject, Observable, filter } from 'rxjs';
 
 @Injectable()
 export class ColorSchemaService {
-  private schema: ColorSchemaEnum;
+  private _schema$ = new BehaviorSubject<ColorSchemaEnum>(null);
   private htmlElClassList: DOMTokenList = this.document.documentElement.classList;
+
+  get shema$(): Observable<ColorSchemaEnum> {
+    return this._schema$.asObservable().pipe(filter(Boolean));
+  }
 
   private get preferredColorScheme(): ColorSchemaEnum {
     const scheme = this.localStorageHandler.getData<ColorSchemaEnum>(LocalStorageKeys.COLOR_SCHEMA);
@@ -31,10 +36,10 @@ export class ColorSchemaService {
   ) {}
 
   initColorSchema(): void {
-    this.schema = this.preferredColorScheme;
+    this._schema$.next(this.preferredColorScheme);
 
-    if (this.schema === ColorSchemaEnum.DARK) {
-      this.htmlElClassList.add(this.schema);
+    if (this._schema$.getValue() === ColorSchemaEnum.DARK) {
+      this.htmlElClassList.add(this._schema$.getValue());
     }
 
     this.setSchemeToLocalStorage();
@@ -43,12 +48,16 @@ export class ColorSchemaService {
   changeColorSchema(): void {
     this.htmlElClassList.toggle(ColorSchemaEnum.DARK);
 
-    this.schema = this.schema === ColorSchemaEnum.LIGHT ? ColorSchemaEnum.DARK : ColorSchemaEnum.LIGHT;
+    this._schema$.next(
+      this._schema$.getValue() === ColorSchemaEnum.LIGHT
+        ? ColorSchemaEnum.DARK
+        : ColorSchemaEnum.LIGHT
+    );
 
     this.setSchemeToLocalStorage();
   }
 
   private setSchemeToLocalStorage(): void {
-    this.localStorageHandler.setData(LocalStorageKeys.COLOR_SCHEMA, this.schema);
+    this.localStorageHandler.setData(LocalStorageKeys.COLOR_SCHEMA, this._schema$.getValue());
   }
 }
