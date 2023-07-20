@@ -1,0 +1,18 @@
+<div class="form-control" [ngClass]="extendClass">
+  <label *ngIf="label" class="form-label" [for]="fieldName">{{ label }}</label>
+  <div class="form-field">
+    <input
+      [type]="type"
+      class="form-element"
+      [ngClass]="{ 'has-error': formField?.invalid && formField?.dirty }"
+      [id]="fieldName"
+      [name]="fieldName"
+      [value]="value"
+      [disabled]="isDisabled"
+      [placeholder]="placeholder"
+      (input)="onChanged($event)"
+      (blur)="touched()"
+    />
+    <span>error</span>
+  </div>
+</div>

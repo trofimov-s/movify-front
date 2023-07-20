@@ -9,7 +9,13 @@ import { LayoutModule } from '@movify/layout';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, CoreModule.forRoot(), LayoutModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    CoreModule.forRoot(),
+    LayoutModule,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

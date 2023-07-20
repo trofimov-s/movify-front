@@ -1,0 +1,11 @@
+:host {
+  @apply flex items-center;
+
+  .light_mode::ng-deep .material-icons {
+    color: yellow !important;
+  }
+
+  .dark_mode::ng-deep .material-icons {
+    color: cornflowerblue !important;
+  }
+}

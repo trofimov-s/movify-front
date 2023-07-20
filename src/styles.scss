@@ -4,17 +4,20 @@
 @import 'angular-material';
 
 @import 'button';
+@import 'logo';
+@import 'dropdown';
 
 html,
 body {
-  height: 100%;
-}
-body {
-  font-family: Comfortaa;
+  @apply h-full;
 }
 
-.dark {
-  body {
-    background-color: gray; // TODO: Update temporary color
-  }
+body {
+  @apply font-main bg-gray-50 text-gray-400 dark:bg-gray-700 dark:text-gray-200;
+}
+
+body {
+  transition:
+    background 400ms linear,
+    border 400ms linear;
 }

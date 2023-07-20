@@ -1,0 +1,7 @@
+<div class="dropdown-item-wrapper flex items-center gap-x-2">
+  <ng-container *ngIf="menu?.icon || menu?.customIcon">
+    <app-icon class="w-4 h-4" [icon]="menu?.icon" [customIcon]="menu?.customIcon"></app-icon>
+  </ng-container>
+  <p class="whitespace-nowrap">{{ menu?.text | translate }}</p>
+</div>
+<div class="dropdown-item-separator" *ngIf="menu?.separator"></div>
