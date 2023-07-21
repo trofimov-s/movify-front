@@ -5,6 +5,7 @@
       "@movify/core": ["src/app/core/index.ts"],
       "@movify/core/functions": ["src/app/core/functions/index.ts"],
       "@movify/core/animation": ["src/app/core/animation/index.ts"],
+      "@movify/core/utils": ["src/app/core/utils/index.ts"],
       "@movify/token": ["src/app/core/injection-token/index.ts"],
       "@movify/color-schema": ["src/app/core/modules/color-schema/index.ts"],
       "@movify/local-storage": ["src/app/core/modules/local-storage/index.ts"],
