@@ -1,2 +1,5 @@
+import { UserEffects } from './user';
+
 export { reducers, AppState } from './reducers';
-export * as HomePageEffects from './effect';
+
+export const Effects = [UserEffects];

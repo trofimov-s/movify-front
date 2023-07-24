@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ModuleWithProviders, NgModule } from '@angular/core';
+import { APP_INITIALIZER, ModuleWithProviders, NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
@@ -8,10 +8,13 @@ import { ColorSchemaModule } from '@movify/color-schema';
 import { LocalStorageModule } from '@movify/local-storage';
 import { TranslateConfigModule } from '@movify/translate';
 import { IconModule } from '@movify/shared/icon';
-import { HomePageEffects, reducers } from './store';
+import { Effects, reducers } from './store';
 import { TokenInterceptorService } from './interceptor';
+import { AppInitializerService, UserLocationApiService } from './service';
 
-export const effects = [HomePageEffects];
+function initActionDispatcher(appInit: AppInitializerService): () => void {
+  return () => appInit.init();
+}
 
 @NgModule({
   imports: [
@@ -21,7 +24,7 @@ export const effects = [HomePageEffects];
     TranslateConfigModule,
     IconModule,
     StoreModule.forRoot(reducers),
-    EffectsModule.forRoot(effects),
+    EffectsModule.forRoot(Effects),
     HttpClientModule,
   ],
   exports: [TranslateConfigModule],
@@ -31,6 +34,14 @@ export const effects = [HomePageEffects];
       multi: true,
       useClass: TokenInterceptorService,
     },
+    {
+      provide: APP_INITIALIZER,
+      multi: true,
+      useFactory: initActionDispatcher,
+      deps: [AppInitializerService],
+    },
+    UserLocationApiService,
+    AppInitializerService,
   ],
 })
 export class CoreModule {
