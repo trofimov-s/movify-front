@@ -18,7 +18,7 @@ export const endpoints: EndpointsConfig = {
   // session_new: 'authentication/session/new',
   // account: 'account',
   // log_out: 'authentication/session',
-  now_playing: 'movie/now_playing',
+  now_playing: 'movie/now_playing', // a list of movies that are currently in theatres
   // popular: 'movie/popular',
   // genres: 'genre/:type/list',
   // upcoming: 'movie/upcoming',
