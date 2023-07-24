@@ -1,15 +1,15 @@
 import { ActionReducerMap } from '@ngrx/store';
-import { HomeState } from './reducer';
-import { homeReducer } from './reducer';
+
+import { UserState, userReducer } from './user';
 
 export enum StateKey {
-  HOME = 'home',
+  USER = 'user',
 }
 
 export interface AppState {
-  [StateKey.HOME]: HomeState;
+  [StateKey.USER]: UserState;
 }
 
 export const reducers: ActionReducerMap<AppState> = {
-  home: homeReducer,
+  user: userReducer,
 };

@@ -21,6 +21,7 @@
       "@movify/layout": ["src/app/layout/index.ts"],
       "@movify/pages/home": ["src/app/pages/home/index.ts"],
       "@movify/auth": ["src/app/layout/modules/auth/index.ts"],
+      "@movify/store/user": ["src/app/core/store/user/index.ts"],
     }
   }
 }
