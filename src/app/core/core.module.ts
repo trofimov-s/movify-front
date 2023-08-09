@@ -10,7 +10,12 @@ import { TranslateConfigModule } from '@movify/translate';
 import { IconModule } from '@movify/shared/icon';
 import { Effects, reducers } from './store';
 import { TokenInterceptorService } from './interceptor';
-import { AppInitializerService, UserLocationApiService } from './service';
+import {
+  AppInitializerService,
+  MovieApiService,
+  MoviesOvwerviewFacadeService,
+  UserLocationApiService,
+} from './service';
 
 function initActionDispatcher(appInit: AppInitializerService): () => void {
   return () => appInit.init();
@@ -42,6 +47,8 @@ function initActionDispatcher(appInit: AppInitializerService): () => void {
     },
     UserLocationApiService,
     AppInitializerService,
+    MovieApiService,
+    MoviesOvwerviewFacadeService,
   ],
 })
 export class CoreModule {

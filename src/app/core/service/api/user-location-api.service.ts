@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { BaseApiService } from './base-api.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
-import { APP_CONFIG } from '../env';
-import { UserLocationData } from '../interface';
+import { APP_CONFIG } from '../../env';
+import { UserLocationData } from '../../interface';
 
 @Injectable()
 export class UserLocationApiService extends BaseApiService {

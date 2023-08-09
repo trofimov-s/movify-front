@@ -1,3 +1,3 @@
-export { BaseApiService } from './base-api.service';
-export { UserLocationApiService } from './user-location-api.service';
+export * from './api';
+export * from './facade';
 export { AppInitializerService } from './app-initializer.service';

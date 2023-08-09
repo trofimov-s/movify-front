@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import { BehaviorSubject, Observable, take } from 'rxjs';
+import { BehaviorSubject, Observable, filter, take } from 'rxjs';
 
 import { AppLanguage } from '../enum';
 import { LocalStorageHandlerService, LocalStorageKeys } from '@movify/local-storage';
@@ -9,6 +9,10 @@ import { LocalStorageHandlerService, LocalStorageKeys } from '@movify/local-stor
 export class TranslateHandlerService {
   private supportLanguages = Object.values(AppLanguage);
   private _currentLang$ = new BehaviorSubject<AppLanguage>(null);
+
+  get currentLang$(): Observable<AppLanguage> {
+    return this._currentLang$.asObservable().pipe(filter(Boolean));
+  }
 
   private get browserLang(): AppLanguage {
     return this.translateService.getBrowserLang() as AppLanguage;

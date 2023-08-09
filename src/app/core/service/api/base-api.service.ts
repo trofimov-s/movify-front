@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 
-import { Query } from '../interface/api';
-import { EndpointsConfig, endpoints, APP_CONFIG } from '../env';
+import { Query } from '../../interface/api';
+import { EndpointsConfig, endpoints, APP_CONFIG } from '../../env';
 
 export abstract class BaseApiService {
   constructor(protected http: HttpClient) {}

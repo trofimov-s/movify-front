@@ -6,7 +6,7 @@ import { UserActionEnum, UserDataActions } from './action';
 import { UserLocationApiService } from '../../service/';
 import { UserLocationData } from '../../interface';
 
-export const TestEffect = createEffect(
+export const UserLocation = createEffect(
   (actions$ = inject(Actions), userLocationApi = inject(UserLocationApiService)) =>
     actions$.pipe(
       ofType(UserActionEnum.GET_USER_LOCATION_DATA),
